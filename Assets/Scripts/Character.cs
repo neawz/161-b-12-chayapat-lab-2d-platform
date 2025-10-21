@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -12,6 +13,13 @@ public abstract class Character : MonoBehaviour
 
     protected Animator anim;
     protected Rigidbody2D rb;
+
+    public void Initialize(int startHealth)
+    {
+        Health = startHealth;
+        rb = GetComponent<Rigidbody2D>();
+        Debug.Log($"{this.name} initial Health: {this.Health}");
+    }
     
     public void TakeDamage(int damage)
     {
