@@ -18,6 +18,7 @@ public abstract class Character : MonoBehaviour
     {
         Health = startHealth;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         Debug.Log($"{this.name} initial Health: {this.Health}");
     }
     
@@ -25,10 +26,11 @@ public abstract class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} took {damage}. Health remain {Health}");
+        IsDead();
     }
     public bool IsDead()
     {
-        if (Health <= 0) 
+        if (Health <= 0)
         {
             Destroy(this.gameObject);
             return true;
