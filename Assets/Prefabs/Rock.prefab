@@ -176,5 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  rb: {fileID: 0}
+  rb: {fileID: 5076126}
   force: {x: 0, y: 0}

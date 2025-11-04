@@ -19,7 +19,6 @@ public class Rock : Weapon
     }
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         damage = 40;
         force = new Vector2(GetShootDirection() * 90, 400);
         Move(); // Add Force

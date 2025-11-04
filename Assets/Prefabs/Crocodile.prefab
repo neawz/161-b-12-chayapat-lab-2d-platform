@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5023672}
   - component: {fileID: 6144962}
   - component: {fileID: 9555892}
+  - component: {fileID: 6405361252017931524}
   m_Layer: 0
   m_Name: Crocodile
   m_TagString: Untagged
@@ -186,6 +187,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6405361252017931524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aaa32c0563069c45bcfb59e5e440ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthBar: {fileID: 0}
+  healthBarPrefab: {fileID: 8762140195405613272, guid: a58ea5f147c313641bdd292d02bd49cc, type: 3}
+  attackRange: 0
+  player: {fileID: 0}
+  <Bullet>k__BackingField: {fileID: 115806, guid: 40466c5ac40024bbca1e4b144cdf43c2, type: 3}
+  <ShootPoint>k__BackingField: {fileID: 419796}
 --- !u!1 &198326
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 198326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.492, y: 0.494, z: 0}
+  m_LocalPosition: {x: -1.247, y: -0.073, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
