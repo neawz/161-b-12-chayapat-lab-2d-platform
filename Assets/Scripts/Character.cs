@@ -11,11 +11,16 @@ public abstract class Character : MonoBehaviour
         get { return health; }
         set { health = (value < 0) ? 0 : value; }
     }
-    [SerializeField] protected HealthBarUI healthBar;
-    [SerializeField] private GameObject healthBarPrefab;
 
     protected Animator anim;
     protected Rigidbody2D rb;
+
+    [SerializeField] HealthBarUI healthBar;
+
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBarUI>();
+    }
 
     public void Initialize(int startHealth)
     {
@@ -23,7 +28,7 @@ public abstract class Character : MonoBehaviour
         anim = GetComponent<Animator>();
         Health = startHealth;
         maxHealth = Health;
-
+        healthBar.UpdateHealthBar(Health, maxHealth);
         Debug.Log($"{this.name} initial Health: {this.Health}");
     }
     
@@ -31,7 +36,7 @@ public abstract class Character : MonoBehaviour
     {
         Health -= Mathf.Clamp(damage, 0, maxHealth);
         Debug.Log($"{this.name} took {damage}. Health remain {Health}");
-        UpdateHealthBar();
+        healthBar.UpdateHealthBar(Health, maxHealth);
         IsDead();
     }
     public bool IsDead()
@@ -42,12 +47,5 @@ public abstract class Character : MonoBehaviour
             return true;
         }
         else return false;
-    }
-    public void UpdateHealthBar()
-    {
-        if (healthBar != null)
-        {
-            healthBar.SetHealth(Health, maxHealth);
-        }
     }
 }
